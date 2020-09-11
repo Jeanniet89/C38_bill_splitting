@@ -150,11 +150,6 @@ Any contributions you make are **greatly appreciated**.
 ## Contact
 
 Jeannie Torres - [https://www.linkedin.com/in/jeannie-torres/] - jeanniet89@gmail.com
-Francesca Marquez - [https://www.linkedin.com/in/fmarq/] 
-Sylvia Robles - [https://www.linkedin.com/in/sylvia-robles-00112a18a/] 
-Kevin Hermanni - [https://www.linkedin.com/in/kevin-hermanni/] 
-Rodolfo Romero -[https://www.linkedin.com/in/chefrudyromero/]
-Samuel Robles - [https://www.linkedin.com/in/samuel-robles-30b2201b1
 
 Project Link: [https://github.com/wyncode/C38_bill_splitting](https://github.com/wyncode/C38_bill_splitting)
 
