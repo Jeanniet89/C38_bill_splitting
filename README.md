@@ -149,7 +149,7 @@ Any contributions you make are **greatly appreciated**.
 
 ## Contact
 
-Jeannie Torres - [https://www.linkedin.com/in/jeannie-torres/] - jeanniet89@gmail.com
+Jeannie Torres - jeanniet89@gmail.com
 
 Project Link: [https://github.com/wyncode/C38_bill_splitting](https://github.com/wyncode/C38_bill_splitting)
 
