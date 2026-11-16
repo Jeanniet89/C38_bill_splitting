@@ -51,8 +51,8 @@ router.patch(
     );
     if (!isValidOperation)
       return res.status(400).send({ error: 'invalid update!' });
-    if (updates.includes('phoneNumber')) welcomeText(req.body.phoneNumber);
     try {
+      if (updates.includes('phoneNumber')) welcomeText(req.body.phoneNumber);
       updates.forEach((update) => (req.user[update] = req.body[update]));
       await req.user.save();
       res.json(req.user);

@@ -57,23 +57,41 @@ This section should list any major frameworks that you built your project using.
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To run the application locally, install the server and client dependencies,
+configure the environment, then start both processes.
 
 ## Prerequisites
 
-- npm
-  `sh npm install npm@latest -g `
+- Node.js 16 or newer and npm
+- A MongoDB database for account and bill data
+- Stripe test keys for checkout; SendGrid credentials for email features
+
+Twilio credentials are only needed for sending SMS when a user adds a phone number.
 
 ## Installation
 
-1. `git clone` this repo
-   `sh git clone https://github.com/your_username_/Project-Name.git `
-2. `cd` into it.
-3. `Install` NPM packages
-   `sh yarn install `
-4. `cd client && yarn install`
-5. `cp .env.sample .env`
+1. Install dependencies from the repository root:
+   ```sh
+   npm install
+   npm install --prefix client
+   ```
+2. Create local environment files:
+   ```sh
+   cp .env.example .env
+   cp client/.env.example client/.env
+   ```
+3. Edit both files. Set `MONGODB_URL` to a running local MongoDB or MongoDB
+   Atlas database, set `JWT_SECRET` to a private random value (for example,
+   `openssl rand -hex 32`), and replace the Stripe and SendGrid placeholders
+   with your test/development credentials. Set `REACT_APP_STRIPE_PUBLIC_KEY`
+   to the matching Stripe publishable test key. Twilio values are only needed
+   for SMS. Never commit either `.env` file.
+4. Start the server and client:
+   ```sh
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000). The Express API runs
+   at [http://localhost:8080](http://localhost:8080).
 
 ## Dependencies
 
@@ -110,11 +128,11 @@ To get a local copy up and running follow these simple example steps.
 |                         | twilio                  |
 |                         | validator               |
 
-## Available build commands
+## Available commands
 
-- `yarn dev`: Runs BOTH your Express.JS and React developer environment locally at the same time. Any logs coming from Express will be prefaced with `[0]`, any logs from `create-react-app` will be prefaced with `[1]`.
-- `yarn server`: Runs JUST your Express.JS server.
-- `yarn client`: Runs JUST your front-end React app.
+- `npm run dev`: Runs the Express server and React development app together.
+- `npm run server`: Runs JUST the Express server.
+- `npm run client`: Runs JUST the React development app.
 
 Open [http://localhost:3000](http://localhost:3000) to view your local React app in the browser. The page will reload if you make edits.
 

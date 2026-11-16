@@ -1,11 +1,11 @@
-if (process.env.NODE_ENV !== 'production') require('dotenv').config();
-
-let accountSid = process.env.TWILIO_SID;
-let authToken = process.env.TWILIO_AUTH_TOKEN;
-
-let client = require('twilio')(accountSid, authToken);
-
 const welcomeText = (phoneNum) => {
+  const accountSid = process.env.TWILIO_SID;
+  const authToken = process.env.TWILIO_AUTH_TOKEN;
+  if (!accountSid || !authToken) {
+    throw new Error('TWILIO_SID and TWILIO_AUTH_TOKEN are required to send SMS.');
+  }
+
+  const client = require('twilio')(accountSid, authToken);
   const phoneNumber = '+1' + phoneNum;
   client.messages
     .create({
